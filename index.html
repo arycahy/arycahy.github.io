@@ -8,16 +8,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
 <style>
 body { background: #fff; color: #262524; font-size: 1rem; line-height: 1.63; }
-.wrap { max-width: 56rem; }
+.wrap { max-width: 54rem; }
 a { color: #244967; text-underline-offset: .19em; }
 a:hover { color: #162f45; }
 a:focus-visible { outline: 2px solid #244967; outline-offset: 4px; }
 header, footer { font-size: .9rem; }
 main p { max-width: 66ch; }
-h1 { font-weight: 620; font-size: clamp(2.1rem, 6vw, 3.35rem); letter-spacing: -.04em; }
+h1 { font-weight: 620; font-size: clamp(2rem, 5vw, 2.95rem); letter-spacing: -.04em; }
 h2 { font-size: 1.4rem; }
 h3 { font-size: 1.05rem; }
-.entry + .entry { margin-top: 1.25rem; }
+.entry + .entry { margin-top: .85rem; }
 .entry h3 { margin-bottom: .2rem; }
 .entry p { margin-bottom: 0; }
 .private h3 { font-weight: 600; }
@@ -31,40 +31,48 @@ h3 { font-size: 1.05rem; }
 @media (min-width: 576px) {
   .year time { position: sticky; top: 1rem; }
 }
+.year-copy > p, .year .col-sm-10 > p { margin-bottom: .65rem; }
+.repo-names { margin-bottom: .2rem; }
+.build a { display: inline-block; }
+@media (max-width: 575.98px) {
+  .wrap { --bs-gutter-x: 1.5rem; }
+  .year time { font-size: .9rem; }
+  .repo { --bs-gutter-y: .15rem; }
+}
 </style>
 </head>
 <body class="ary">
 <a class="visually-hidden-focusable" href="#main">Skip to content</a>
 
-<header class="container wrap d-flex flex-wrap align-items-baseline justify-content-between gap-2 py-3 border-bottom"><strong>Ary Cahyo Wibowo</strong><nav class="d-flex flex-wrap gap-3" aria-label="Site links"><a href="#timeline">Timeline</a><a href="https://kinematiklab.github.io/">KinematikLab</a><a href="https://github.com/yrac">GitHub</a></nav></header>
+<header class="container wrap d-flex flex-wrap align-items-baseline justify-content-between gap-2 py-2 border-bottom"><strong>Ary Cahyo Wibowo</strong><nav class="d-flex flex-wrap gap-3" aria-label="Site links"><a href="#timeline">Timeline</a><a href="https://kinematiklab.github.io/">KinematikLab</a><a href="https://github.com/yrac">GitHub</a></nav></header>
 <main id="main" class="container wrap">
-<div class="pt-5 pb-4"><h1 class="mb-3">Ary Cahyo Wibowo</h1><div class="hero-copy" id="about"><p>I studied computing at STMIK Akakom and now work as a software developer. Some of my earliest projects were simple things I could test at home, like using an ESP8266 and a servo to turn a lamp switch.</p><p>Working on my Nissan B13 gave me a different kind of debugging. A no-start meant checking power, ground, and sensor signals before I could narrow it down. Over time, that work grew into a dedicated wiring harness and a Speeduino conversion.</p></div></div>
-<section id="timeline" aria-labelledby="timeline-title"><div id="projects"><h2 class="pb-3 mb-0" id="timeline-title">Project timeline</h2></div>
-<div class="year row g-2 gx-sm-4 border-top py-4 mx-0">
-<div class="col-sm-2"><time datetime="2026">2026</time></div>
-<div class="col-sm-10"><h2>Android apps, local tools, and ECU diagnostics</h2><p>I built LabelPrint around a recurring chore and kept working on the B13’s engine management. My private repos from this year span Android, local tooling, and ECU diagnostics.</p>
+<div class="pt-4 pb-3"><h1 class="mb-2">Ary Cahyo Wibowo</h1><div class="hero-copy" id="about"><p>I studied computing at STMIK Akakom and now work as a software developer. Some of my earliest projects were simple things I could test at home, like using an ESP8266 and a servo to turn a lamp switch.</p><p>Working on my Nissan B13 gave me a different kind of debugging. A no-start meant checking power, ground, and sensor signals before I could narrow it down. Over time, that work grew into a dedicated wiring harness and a Speeduino conversion.</p></div></div>
+<section id="timeline" aria-labelledby="timeline-title"><div id="projects"><h2 class="pb-2 mb-0" id="timeline-title">Project timeline</h2></div>
+<div class="year row g-2 gx-sm-3 border-top py-3 mx-0">
+<div class="col-sm-2 col-lg-1"><time datetime="2026">2026</time></div>
+<div class="col-sm-10 col-lg-11"><h2>Android apps, local tools, and ECU diagnostics</h2><p>I built LabelPrint around a recurring chore and kept working on the B13’s engine management. My private repos from this year span Android, local tooling, and ECU diagnostics.</p>
 <article class="entry"><h3><a href="projects/labelprint/">LabelPrint</a></h3><p>I made an Android app to get Shopee shipping labels ready for my Bluetooth thermal printer.</p></article><article class="entry"><h3><a href="projects/nissan-b13/">Nissan B13 · Speeduino</a></h3><p>I built a modular harness and a crank trigger wheel, then documented the electrical faults I ran into.</p></article>
 <article class="entry"><h3><a href="https://github.com/arycahy/arycahy.github.io">This portfolio</a></h3><p>I started keeping the software and garage work in one place, with dates and links back to the source.</p></article>
-<section class="private border-top pt-3 mt-4"><h3>Private repositories</h3><ul class="repo-names"><li>SmartWakeUp</li><li>xagent-hq</li><li>OtherApps</li><li>NotificationHub</li><li>LiveAgentCoordinationMedia</li><li>NissanSentraSetting</li><li>SentraSpeeduino</li><li>WorkspacePortal</li><li>goodday-panel</li><li>speeduino-agent</li><li>tune-agent</li><li>Workspace</li><li>PostgreeComparer</li></ul></section>
+<section class="private border-top pt-2 mt-3"><h3>Private repositories</h3><ul class="repo-names"><li>SmartWakeUp</li><li>xagent-hq</li><li>OtherApps</li><li>NotificationHub</li><li>LiveAgentCoordinationMedia</li><li>NissanSentraSetting</li><li>SentraSpeeduino</li><li>WorkspacePortal</li><li>goodday-panel</li><li>speeduino-agent</li><li>tune-agent</li><li>Workspace</li><li>PostgreeComparer</li></ul></section>
 </div></div>
-<div class="year row g-2 gx-sm-4 border-top py-4 mx-0">
-<div class="col-sm-2"><time datetime="2025">2025</time></div>
-<div class="col-sm-10"><h2>Two projects for the Nissan B13</h2><p>Two projects came out of working on the B13: a controller for the AC and a small screen for engine data.</p>
+<div class="year row g-2 gx-sm-3 border-top py-3 mx-0">
+<div class="col-sm-2 col-lg-1"><time datetime="2025">2025</time></div>
+<div class="col-sm-10 col-lg-11"><h2>Two projects for the Nissan B13</h2><p>Two projects came out of working on the B13: a controller for the AC and a small screen for engine data.</p>
 
 <article class="entry"><h3><a href="https://github.com/yrac/Carvionics">Carvionics</a></h3><p>I wanted to see what the ECU was doing without keeping a laptop open. This TFT prototype reads Speeduino telemetry and lays it out like a cockpit display.</p></article>
 <article class="entry"><h3><a href="https://github.com/yrac/CarClimateControl">CarClimateControl</a></h3><p>I made an Arduino controller for the car’s AC and later drew a KiCad schematic for the circuit.</p></article>
-<section class="private border-top pt-3 mt-4"><h3>Private repositories</h3><ul class="repo-names"><li>TestPolicy</li></ul></section>
+<section class="private border-top pt-2 mt-3"><h3>Private repositories</h3><ul class="repo-names"><li>TestPolicy</li></ul></section>
 </div></div>
-<div class="year row g-2 gx-sm-4 border-top py-4 mx-0">
-<div class="col-sm-2"><time datetime="2022">2022</time></div>
-<div class="col-sm-10"><h2>Proof of concept and microservices</h2><p>My GitHub history from this period includes a proof of concept and a microservices repository.</p>
+<div class="year row g-2 gx-sm-3 border-top py-3 mx-0">
+<div class="col-sm-2 col-lg-1"><time datetime="2022">2022</time></div>
+<div class="col-sm-10 col-lg-11"><h2>Proof of concept and microservices</h2><p>My GitHub history from this period includes a proof of concept and a microservices repository.</p>
 
 
-<section class="private border-top pt-3 mt-4"><h3>Private repositories</h3><ul class="repo-names"><li>Citilink.Microservices</li><li>EspayScootPOC</li></ul></section>
+<section class="private border-top pt-2 mt-3"><h3>Private repositories</h3><ul class="repo-names"><li>Citilink.Microservices</li><li>EspayScootPOC</li></ul></section>
 </div></div>
-<div class="year row g-2 gx-sm-4 border-top py-4 mx-0">
-<div class="col-sm-2"><time datetime="2020">2020</time></div>
-<div class="col-sm-10"><h2>A servo, a light switch, and an API</h2><p>My earliest public projects on GitHub were experiments with the ESP8266.</p>
+<div class="year row g-2 gx-sm-3 border-top py-3 mx-0">
+<div class="col-sm-2 col-lg-1"><time datetime="2020">2020</time></div>
+<div class="col-sm-10 col-lg-11"><h2>A servo, a light switch, and an API</h2><p>My earliest public projects on GitHub were experiments with the ESP8266.</p>
 
 <article class="entry"><h3><a href="https://github.com/yrac/esp8266core">esp8266core</a></h3><p>On the software side, I tried an ASP.NET Core API for recording ESP8266 events and device state.</p></article>
 <article class="entry"><h3><a href="https://github.com/yrac/AlalogSwitchLamp">AlalogSwitchLamp</a></h3><p>I used an ESP8266 and a servo to turn an existing lamp switch. The firmware supports a timer and a manual trigger.</p></article>
