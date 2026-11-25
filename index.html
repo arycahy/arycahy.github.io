@@ -5,72 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A project timeline spanning software development, embedded electronics, and hands-on automotive work.">
 <title>Ary Cahyo Wibowo | Project Timeline</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
 <style>
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
-.wrap { width: min(72rem, 100% - 2.5rem); margin-inline: auto; }
-a { color: var(--accent); text-decoration-thickness: .08em; text-underline-offset: .2em; }
-a:hover { text-decoration-thickness: .14em; }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: .3rem; }
-h1, h2, h3, p { margin: 0; }
-h1, h2 { line-height: 1.08; }
-p { max-width: 42rem; }
-nav { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; }
-.bar, footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .7rem 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
-footer { border-top: 1px solid var(--line); border-bottom: 0; }
-.skip { position: absolute; inset: .5rem auto auto .5rem; padding: .5rem; background: var(--paper); transform: translateY(-200%); }
-.skip:focus { transform: none; }
-
-:root { --paper: #f5f0e6; --ink: #26231e; --accent: #8a3427; --line: #c9bead; }
-h1, h2 { font-family: Georgia, serif; font-weight: 400; }
-.hero { display: grid; grid-template-columns: 1.45fr 1fr; align-items: end; gap: 2rem; padding: clamp(3rem, 8vw, 7rem) 0; }
-h1 { font-size: clamp(3.2rem, 8.5vw, 8.2rem); letter-spacing: -.065em; }
-.hero-copy { border-left: 3px solid var(--accent); padding-left: 1rem; }
-.hero-copy p + p { margin-top: .9rem; }
-.timeline-title { padding: 1rem 0; border-top: 3px solid var(--ink); font-size: 1.35rem; }
-.year { display: grid; grid-template-columns: minmax(7rem, .48fr) 1.52fr; gap: clamp(1rem, 4vw, 3rem); border-top: 1px solid var(--line); padding: 1.7rem 0 2.2rem; }
-.year time { color: var(--accent); font: clamp(2.2rem, 5vw, 4.3rem)/1 Georgia, serif; }
-.year-copy > h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); margin-bottom: .55rem; }
-.entry { padding-top: .9rem; margin-top: .9rem; border-top: 1px solid var(--line); }
-.entry h3, .private h3 { font-size: 1rem; }
-.private { padding: .85rem 1rem; margin-top: 1rem; background: #ede5d8; }
-.repo-names { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .1rem 1rem; margin: .35rem 0 0; padding-left: 1.15rem; overflow-wrap: anywhere; }
-@media (max-width: 43rem) { .hero, .year { grid-template-columns: 1fr; } }
-
+body { background: #fff; color: #262524; font-size: 1rem; line-height: 1.63; }
+.wrap { max-width: 56rem; }
+a { color: #244967; text-underline-offset: .19em; }
+a:hover { color: #162f45; }
+a:focus-visible { outline: 2px solid #244967; outline-offset: 4px; }
+header, footer { font-size: .9rem; }
+main p { max-width: 66ch; }
+h1 { font-weight: 620; font-size: clamp(2.1rem, 6vw, 3.35rem); letter-spacing: -.04em; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.05rem; }
+.entry + .entry { margin-top: 1.25rem; }
+.entry h3 { margin-bottom: .2rem; }
+.entry p { margin-bottom: 0; }
+.private h3 { font-weight: 600; }
+.repo-names { column-width: 13rem; padding-left: 1.15rem; font-size: .94rem; overflow-wrap: anywhere; }
+.repo-names li { break-inside: avoid; }
+.year time { font-variant-numeric: tabular-nums; color: #595653; }
+.kin h1, .kin h2 { font-family: Georgia, serif; }
+.kin h1 { font-weight: 400; }
+.kin .repo h4 { font-size: 1.02rem; overflow-wrap: anywhere; }
+.status { color: #4d5d50; font-size: .85rem; }
+@media (min-width: 576px) {
+  .year time { position: sticky; top: 1rem; }
+}
 </style>
 </head>
 <body class="ary">
-<a class="skip" href="#main">Skip to content</a>
+<a class="visually-hidden-focusable" href="#main">Skip to content</a>
 
-<header class="wrap bar"><strong>Ary Cahyo Wibowo</strong><nav aria-label="Site links"><a href="#timeline">Timeline</a><a href="https://kinematiklab.github.io/">KinematikLab</a><a href="https://github.com/yrac">GitHub</a></nav></header>
-<main id="main" class="wrap">
-<div class="hero"><h1>Ary Cahyo<br>Wibowo</h1><div class="hero-copy" id="about"><p>I’m a software developer. Outside work, I spend a fair amount of time on an old Nissan, tracing wires and figuring out what the ECU is seeing.</p><p><a href="#timeline">Browse the projects</a> or <a href="https://kinematiklab.github.io/">visit KinematikLab</a> for the automotive work.</p></div></div>
-<section id="timeline" aria-labelledby="timeline-title"><div id="projects"><h2 class="timeline-title" id="timeline-title">Project timeline</h2></div>
-<div class="year">
-<time datetime="2026">2026</time>
-<div class="year-copy"><h2>Apps, tools, and a car that keeps me learning</h2><p>I built LabelPrint around a recurring chore and kept working on the B13’s engine management. My private repos from this year span Android, local tooling, and ECU diagnostics.</p>
+<header class="container wrap d-flex flex-wrap align-items-baseline justify-content-between gap-2 py-3 border-bottom"><strong>Ary Cahyo Wibowo</strong><nav class="d-flex flex-wrap gap-3" aria-label="Site links"><a href="#timeline">Timeline</a><a href="https://kinematiklab.github.io/">KinematikLab</a><a href="https://github.com/yrac">GitHub</a></nav></header>
+<main id="main" class="container wrap">
+<div class="pt-5 pb-4"><h1 class="mb-3">Ary Cahyo Wibowo</h1><div class="hero-copy" id="about"><p>I’m a software developer. At home, I work on a Nissan B13 with a Speeduino ECU. This archive starts with my first ESP8266 projects and includes the Android apps and automotive electronics I’ve built since.</p></div></div>
+<section id="timeline" aria-labelledby="timeline-title"><div id="projects"><h2 class="pb-3 mb-0" id="timeline-title">Project timeline</h2></div>
+<div class="year row g-2 gx-sm-4 border-top py-4 mx-0">
+<div class="col-sm-2"><time datetime="2026">2026</time></div>
+<div class="col-sm-10"><h2>Android apps, local tools, and ECU diagnostics</h2><p>I built LabelPrint around a recurring chore and kept working on the B13’s engine management. My private repos from this year span Android, local tooling, and ECU diagnostics.</p>
 <article class="entry"><h3><a href="projects/labelprint/">LabelPrint</a></h3><p>I made an Android app to get Shopee shipping labels ready for my Bluetooth thermal printer.</p></article><article class="entry"><h3><a href="projects/nissan-b13/">Nissan B13 · Speeduino</a></h3><p>I built a modular harness and a crank trigger wheel, then documented the electrical faults I ran into.</p></article>
 <article class="entry"><h3><a href="https://github.com/arycahy/arycahy.github.io">This portfolio</a></h3><p>I started keeping the software and garage work in one place, with dates and links back to the source.</p></article>
-<section class="private"><h3>Private repositories</h3><ul class="repo-names"><li>SmartWakeUp</li><li>xagent-hq</li><li>OtherApps</li><li>NotificationHub</li><li>LiveAgentCoordinationMedia</li><li>NissanSentraSetting</li><li>SentraSpeeduino</li><li>WorkspacePortal</li><li>goodday-panel</li><li>speeduino-agent</li><li>tune-agent</li><li>Workspace</li><li>PostgreeComparer</li></ul></section>
+<section class="private border-top pt-3 mt-4"><h3>Private repositories</h3><ul class="repo-names"><li>SmartWakeUp</li><li>xagent-hq</li><li>OtherApps</li><li>NotificationHub</li><li>LiveAgentCoordinationMedia</li><li>NissanSentraSetting</li><li>SentraSpeeduino</li><li>WorkspacePortal</li><li>goodday-panel</li><li>speeduino-agent</li><li>tune-agent</li><li>Workspace</li><li>PostgreeComparer</li></ul></section>
 </div></div>
-<div class="year">
-<time datetime="2025">2025</time>
-<div class="year-copy"><h2>Taking the electronics into the car</h2><p>Two projects came out of working on the B13: a controller for the AC and a small screen for engine data.</p>
+<div class="year row g-2 gx-sm-4 border-top py-4 mx-0">
+<div class="col-sm-2"><time datetime="2025">2025</time></div>
+<div class="col-sm-10"><h2>Two projects for the Nissan B13</h2><p>Two projects came out of working on the B13: a controller for the AC and a small screen for engine data.</p>
 
 <article class="entry"><h3><a href="https://github.com/yrac/Carvionics">Carvionics</a></h3><p>I wanted to see what the ECU was doing without keeping a laptop open. This TFT prototype reads Speeduino telemetry and lays it out like a cockpit display.</p></article>
 <article class="entry"><h3><a href="https://github.com/yrac/CarClimateControl">CarClimateControl</a></h3><p>I made an Arduino controller for the car’s AC and later drew a KiCad schematic for the circuit.</p></article>
-<section class="private"><h3>Private repositories</h3><ul class="repo-names"><li>TestPolicy</li></ul></section>
+<section class="private border-top pt-3 mt-4"><h3>Private repositories</h3><ul class="repo-names"><li>TestPolicy</li></ul></section>
 </div></div>
-<div class="year">
-<time datetime="2022">2022</time>
-<div class="year-copy"><h2>A pair of early software repositories</h2><p>My GitHub history from this period includes a proof of concept and a microservices repository.</p>
+<div class="year row g-2 gx-sm-4 border-top py-4 mx-0">
+<div class="col-sm-2"><time datetime="2022">2022</time></div>
+<div class="col-sm-10"><h2>Proof of concept and microservices</h2><p>My GitHub history from this period includes a proof of concept and a microservices repository.</p>
 
 
-<section class="private"><h3>Private repositories</h3><ul class="repo-names"><li>Citilink.Microservices</li><li>EspayScootPOC</li></ul></section>
+<section class="private border-top pt-3 mt-4"><h3>Private repositories</h3><ul class="repo-names"><li>Citilink.Microservices</li><li>EspayScootPOC</li></ul></section>
 </div></div>
-<div class="year">
-<time datetime="2020">2020</time>
-<div class="year-copy"><h2>A servo, a light switch, and an API</h2><p>My earliest public projects on GitHub were experiments with the ESP8266.</p>
+<div class="year row g-2 gx-sm-4 border-top py-4 mx-0">
+<div class="col-sm-2"><time datetime="2020">2020</time></div>
+<div class="col-sm-10"><h2>A servo, a light switch, and an API</h2><p>My earliest public projects on GitHub were experiments with the ESP8266.</p>
 
 <article class="entry"><h3><a href="https://github.com/yrac/esp8266core">esp8266core</a></h3><p>On the software side, I tried an ASP.NET Core API for recording ESP8266 events and device state.</p></article>
 <article class="entry"><h3><a href="https://github.com/yrac/AlalogSwitchLamp">AlalogSwitchLamp</a></h3><p>I used an ESP8266 and a servo to turn an existing lamp switch. The firmware supports a timer and a manual trigger.</p></article>
