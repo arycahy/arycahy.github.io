@@ -1,157 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Software development and hands-on automotive projects by Ary Cahyo Wibowo.">
-  <meta name="theme-color" content="#f7f5ef">
-  <title>Ary Cahyo Wibowo | Portfolio</title>
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A project timeline spanning software development, embedded electronics, and hands-on automotive work.">
+<title>Ary Cahyo Wibowo | Project Timeline</title>
 <style>
-.timeline-intro { max-width: 39rem; margin-top: 1rem; color: var(--muted); }
-.timeline { list-style: none; margin: 2rem 0 0; padding: 0; }
-.timeline-year { display: grid; grid-template-columns: 8rem minmax(0, 1fr); }
-.timeline-year > h3 { padding: 0 1.25rem 1rem 0; color: var(--accent); }
-.timeline-entries { position: relative; border-left: 1px solid var(--line); padding: 0 0 2.25rem 1.5rem; }
-.timeline-entries::before {
-  content: "";
-  position: absolute;
-  top: .58rem;
-  left: -.29rem;
-  width: .52rem;
-  height: .52rem;
-  border-radius: 50%;
-  background: var(--accent);
-}
-.timeline-year:last-child .timeline-entries { padding-bottom: 0; }
-.timeline-entries article { max-width: 41rem; }
-.timeline-entries article + article { margin-top: 1.65rem; }
-.timeline-entries h4 { margin: 0 0 .25rem; font: 1.45rem/1.25 Georgia, serif; }
-.timeline-entries p { margin-bottom: .25rem; color: var(--muted); }
-.timeline-entries a { display: inline-block; margin-right: 1rem; font-weight: 650; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 system-ui, sans-serif; }
+.wrap { width: min(72rem, 100% - 2.5rem); margin-inline: auto; }
+a { color: var(--accent); text-decoration-thickness: .08em; text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: .14em; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: .3rem; }
+h1, h2, h3, p { margin: 0; }
+h1, h2 { line-height: 1.08; }
+p { max-width: 42rem; }
+nav { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; }
+.bar, footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .7rem 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+footer { border-top: 1px solid var(--line); border-bottom: 0; }
+.skip { position: absolute; inset: .5rem auto auto .5rem; padding: .5rem; background: var(--paper); transform: translateY(-200%); }
+.skip:focus { transform: none; }
 
-@media (max-width: 42rem) {
-  .timeline-year { grid-template-columns: 1fr; }
-  .timeline-entries { margin-left: .3rem; padding-left: .95rem; }
-}
+:root { --paper: #f5f0e6; --ink: #26231e; --accent: #8a3427; --line: #c9bead; }
+h1, h2 { font-family: Georgia, serif; font-weight: 400; }
+.hero { display: grid; grid-template-columns: 1.45fr 1fr; align-items: end; gap: 2rem; padding: clamp(3rem, 8vw, 7rem) 0; }
+h1 { font-size: clamp(3.2rem, 8.5vw, 8.2rem); letter-spacing: -.065em; }
+.hero-copy { border-left: 3px solid var(--accent); padding-left: 1rem; }
+.hero-copy p + p { margin-top: .9rem; }
+.timeline-title { padding: 1rem 0; border-top: 3px solid var(--ink); font-size: 1.35rem; }
+.year { display: grid; grid-template-columns: minmax(7rem, .48fr) 1.52fr; gap: clamp(1rem, 4vw, 3rem); border-top: 1px solid var(--line); padding: 1.7rem 0 2.2rem; }
+.year time { color: var(--accent); font: clamp(2.2rem, 5vw, 4.3rem)/1 Georgia, serif; }
+.year-copy > h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); margin-bottom: .55rem; }
+.entry { padding-top: .9rem; margin-top: .9rem; border-top: 1px solid var(--line); }
+.entry h3, .private h3 { font-size: 1rem; }
+.private { padding: .85rem 1rem; margin-top: 1rem; background: #ede5d8; }
+.repo-names { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .1rem 1rem; margin: .35rem 0 0; padding-left: 1.15rem; overflow-wrap: anywhere; }
+@media (max-width: 43rem) { .hero, .year { grid-template-columns: 1fr; } }
+
 </style>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="site-header wrap">
-    <a class="brand" href="index.html">Ary Cahyo Wibowo</a>
-    <nav aria-label="Main navigation">
-      <a href="index.html#projects">Projects</a>
-      <a href="index.html#timeline">Timeline</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
-  <main id="main" class="wrap">
-  <section class="hero" aria-labelledby="intro">
-    <p class="eyebrow">Software Developer &amp; Automotive Enthusiast</p>
-    <h1 id="intro">Ary Cahyo<br>Wibowo<span>.</span></h1>
-    <p class="intro">I build software for everyday jobs and spend my garage time tracing wiring faults and working on engine controls. This is a record of both.</p>
-    <a class="button" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a>
-  </section>
-  <section id="projects" class="section" aria-labelledby="project-title">
-    <h2 id="project-title">Featured projects</h2>
-    <div class="project-grid">
-    <article class="project-card">
-      <div class="project-visual software-visual" aria-hidden="true">
-        <div class="phone"><div class="phone-top">LabelPrint</div><div class="paper"><span>SHIPPING LABEL</span><i></i><b></b></div><div class="print">Print label</div></div>
-      </div>
-      <div class="card-copy">
-        <p class="eyebrow">Software Development</p>
-        <h3><a href="projects/labelprint/">LabelPrint</a></h3>
-        <p>An Android app that prepares Shopee shipping labels for a Bluetooth thermal printer.</p>
-        <a class="text-link" href="projects/labelprint/">View project<span class="sr-only"> · LabelPrint</span> <span aria-hidden="true">↗</span></a>
-      </div>
-    </article>
-    <article class="project-card">
-      <div class="project-visual automotive-visual" aria-hidden="true">
-        <div class="wiring">
-          <div class="wire-node">Crank sensor</div><div class="wire-line"></div>
-          <div class="wire-node primary">Speeduino</div><div class="wire-line"></div>
-          <div class="wire-node">Ignition coils</div>
-        </div>
-      </div>
-      <div class="card-copy">
-        <p class="eyebrow">KinematikLab · Automotive Projects</p>
-        <h3><a href="projects/nissan-b13/">Nissan B13 · Speeduino</a></h3>
-        <p>A standalone ECU conversion with a modular wiring harness and a custom crank trigger wheel.</p>
-        <a class="text-link" href="projects/nissan-b13/">View project<span class="sr-only"> · Nissan B13 · Speeduino</span> <span aria-hidden="true">↗</span></a>
-      </div>
-    </article>
-    </div>
-  </section>
-  <section id="timeline" class="section timeline-section" aria-labelledby="timeline-title">
-    <h2 id="timeline-title">Project timeline</h2>
-    <p class="timeline-intro">A look back through my public repositories and project write-ups, from early microcontroller experiments to the tools I build today.</p>
-    <ol class="timeline">
-      <li class="timeline-year">
-        <h3><time datetime="2026">2026</time></h3>
-        <div class="timeline-entries">
-          <article>
-            <h4>A quicker way to print shipping labels</h4>
-            <p>I built LabelPrint around a repetitive Android workflow. It prepares Shopee shipping labels for a small Bluetooth thermal printer.</p>
-            <a href="projects/labelprint/">LabelPrint write-up</a>
-          </article>
-          <article>
-            <h4>A place to document the work</h4>
-            <p>I built this site to keep my software and garage projects in one place. KinematikLab carries the automotive repository catalog and project status notes.</p>
-            <a href="https://github.com/arycahy/arycahy.github.io">Portfolio source</a>
-            <a href="https://github.com/KinematikLab">KinematikLab catalog</a>
-          </article>
-          <article>
-            <h4>Building and diagnosing an ECU conversion</h4>
-            <p>On my Nissan B13, I built a modular harness and a crank trigger wheel for Speeduino. The write-up follows the wiring and engine-sync issues I encountered along the way.</p>
-            <a href="projects/nissan-b13/">Nissan B13 write-up</a>
-          </article>
-        </div>
-      </li>
-      <li class="timeline-year">
-        <h3><time datetime="2025">2025</time></h3>
-        <div class="timeline-entries">
-          <article>
-            <h4>Reading engine data on a dedicated display</h4>
-            <p>Carvionics brings Speeduino telemetry to a small TFT with an aircraft-inspired layout. I built a serial parser and a UI demo around the display.</p>
-            <a href="https://github.com/yrac/Carvionics">Carvionics repository</a>
-          </article>
-          <article>
-            <h4>Giving the AC its own controller</h4>
-            <p>I started an Arduino controller that reads evaporator temperature and handles the compressor and blower. I later added a KiCad schematic and a bill of materials.</p>
-            <a href="https://github.com/yrac/CarClimateControl">CarClimateControl repository</a>
-          </article>
-        </div>
-      </li>
-      <li class="timeline-year">
-        <h3><time datetime="2020">2020</time></h3>
-        <div class="timeline-entries">
-          <article>
-            <h4>Tracking device state in .NET</h4>
-            <p>In esp8266core, I experimented with an ASP.NET Core API for recording events and tracking the current state of a device.</p>
-            <a href="https://github.com/yrac/esp8266core">esp8266core repository</a>
-          </article>
-          <article>
-            <h4>Turning a lamp switch with a servo</h4>
-            <p>One of my earlier ESP8266 projects used a servo to move a physical lamp switch, with a manual trigger and a schedule based on network time.</p>
-            <a href="https://github.com/yrac/AlalogSwitchLamp">AlalogSwitchLamp repository</a>
-          </article>
-        </div>
-      </li>
-    </ol>
-  </section>
-  <section id="about" class="section info" aria-labelledby="about-title">
-    <h2 id="about-title">About</h2>
-    <p>I’m a software developer who spends part of my free time working on cars. I enjoy figuring out why something behaves the way it does, whether I’m tracing a bug in an app or diagnosing a fault in a wiring harness.</p>
-  </section>
-  <section id="contact" class="section info" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contact</h2>
-    <p><a class="text-link" href="https://github.com/yrac">Find me on GitHub <span aria-hidden="true">↗</span></a></p>
-  </section>
-  </main>
-  <footer class="wrap site-footer"><span>Ary Cahyo Wibowo</span><a href="https://github.com/yrac">GitHub ↗</a></footer>
+<body class="ary">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap bar"><strong>Ary Cahyo Wibowo</strong><nav aria-label="Site links"><a href="#timeline">Timeline</a><a href="https://kinematiklab.github.io/">KinematikLab</a><a href="https://github.com/yrac">GitHub</a></nav></header>
+<main id="main" class="wrap">
+<div class="hero"><h1>Ary Cahyo<br>Wibowo</h1><div class="hero-copy" id="about"><p>I’m a software developer. Outside work, I spend a fair amount of time on an old Nissan, tracing wires and figuring out what the ECU is seeing.</p><p><a href="#timeline">Browse the projects</a> or <a href="https://kinematiklab.github.io/">visit KinematikLab</a> for the automotive work.</p></div></div>
+<section id="timeline" aria-labelledby="timeline-title"><div id="projects"><h2 class="timeline-title" id="timeline-title">Project timeline</h2></div>
+<div class="year">
+<time datetime="2026">2026</time>
+<div class="year-copy"><h2>Apps, tools, and a car that keeps me learning</h2><p>I built LabelPrint around a recurring chore and kept working on the B13’s engine management. My private repos from this year span Android, local tooling, and ECU diagnostics.</p>
+<article class="entry"><h3><a href="projects/labelprint/">LabelPrint</a></h3><p>I made an Android app to get Shopee shipping labels ready for my Bluetooth thermal printer.</p></article><article class="entry"><h3><a href="projects/nissan-b13/">Nissan B13 · Speeduino</a></h3><p>I built a modular harness and a crank trigger wheel, then documented the electrical faults I ran into.</p></article>
+<article class="entry"><h3><a href="https://github.com/arycahy/arycahy.github.io">This portfolio</a></h3><p>I started keeping the software and garage work in one place, with dates and links back to the source.</p></article>
+<section class="private"><h3>Private repositories</h3><ul class="repo-names"><li>SmartWakeUp</li><li>xagent-hq</li><li>OtherApps</li><li>NotificationHub</li><li>LiveAgentCoordinationMedia</li><li>NissanSentraSetting</li><li>SentraSpeeduino</li><li>WorkspacePortal</li><li>goodday-panel</li><li>speeduino-agent</li><li>tune-agent</li><li>Workspace</li><li>PostgreeComparer</li></ul></section>
+</div></div>
+<div class="year">
+<time datetime="2025">2025</time>
+<div class="year-copy"><h2>Taking the electronics into the car</h2><p>Two projects came out of working on the B13: a controller for the AC and a small screen for engine data.</p>
+
+<article class="entry"><h3><a href="https://github.com/yrac/Carvionics">Carvionics</a></h3><p>I wanted to see what the ECU was doing without keeping a laptop open. This TFT prototype reads Speeduino telemetry and lays it out like a cockpit display.</p></article>
+<article class="entry"><h3><a href="https://github.com/yrac/CarClimateControl">CarClimateControl</a></h3><p>I made an Arduino controller for the car’s AC and later drew a KiCad schematic for the circuit.</p></article>
+<section class="private"><h3>Private repositories</h3><ul class="repo-names"><li>TestPolicy</li></ul></section>
+</div></div>
+<div class="year">
+<time datetime="2022">2022</time>
+<div class="year-copy"><h2>A pair of early software repositories</h2><p>My GitHub history from this period includes a proof of concept and a microservices repository.</p>
+
+
+<section class="private"><h3>Private repositories</h3><ul class="repo-names"><li>Citilink.Microservices</li><li>EspayScootPOC</li></ul></section>
+</div></div>
+<div class="year">
+<time datetime="2020">2020</time>
+<div class="year-copy"><h2>A servo, a light switch, and an API</h2><p>My earliest public projects on GitHub were experiments with the ESP8266.</p>
+
+<article class="entry"><h3><a href="https://github.com/yrac/esp8266core">esp8266core</a></h3><p>On the software side, I tried an ASP.NET Core API for recording ESP8266 events and device state.</p></article>
+<article class="entry"><h3><a href="https://github.com/yrac/AlalogSwitchLamp">AlalogSwitchLamp</a></h3><p>I used an ESP8266 and a servo to turn an existing lamp switch. The firmware supports a timer and a manual trigger.</p></article>
+
+</div></div>
+</section>
+</main>
+<footer class="wrap" id="contact"><span>Ary Cahyo Wibowo</span><a href="https://github.com/yrac">GitHub</a></footer>
 </body>
 </html>
-
